@@ -1,0 +1,31 @@
+PODS:
+  - CocoaLumberjack (1.8.0):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.8.0)
+  - CocoaLumberjack/Extensions (1.8.0):
+    - CocoaLumberjack/Core
+  - FileMD5Hash (0.0.1)
+  - GRKAlertBlocks (1.0.1)
+  - Sprout (1.1):
+    - CocoaLumberjack (~> 1.6)
+    - SSZipArchive (~> 0.3.1)
+  - SSZipArchive (0.3.1)
+  - TestFlightSDK (2.1.4)
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - FileMD5Hash
+  - GRKAlertBlocks (~> 1.0)
+  - Sprout (~> 1.1)
+  - SSZipArchive
+  - TestFlightSDK (~> 2.1.3)
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
+  FileMD5Hash: c3b015e6fb293eea0a0c276747f61f20408c2644
+  GRKAlertBlocks: 9475a9d0608a275fc5f2443224b709025287b1c6
+  Sprout: 039169223edc889c127fe76a46c58a7708d7e475
+  SSZipArchive: 47d0589a15452311749a4eeecb97e12800d127de
+  TestFlightSDK: 79290b6bddb29601c92d648692f4ab1815a78e90
+
+COCOAPODS: 0.29.0

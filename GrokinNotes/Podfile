@@ -1,0 +1,8 @@
+platform :ios, '7.0'
+pod 'Sprout',						'~> 1.1'
+pod 'TestFlightSDK',				'~> 2.1.3'
+pod 'GRKAlertBlocks',				'~> 1.0'
+pod 'FileMD5Hash'
+
+pod 'SSZipArchive',					:inhibit_warnings => true
+pod 'CocoaLumberjack',				:inhibit_warnings => true

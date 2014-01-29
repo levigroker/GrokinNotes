@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0806445D1891C3C0005572CC /* GRKFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0806445C1891C3C0005572CC /* GRKFileManager.m */; };
+		08087E5018997566009D2C54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08087E4F18997566009D2C54 /* Images.xcassets */; };
+		08087E5318997582009D2C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08087E5118997582009D2C54 /* Main.storyboard */; };
+		0819D22E18902A3800BA40D7 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819D22D18902A3800BA40D7 /* NoteCell.m */; };
+		0819D23218902E4A00BA40D7 /* OrientationRespectfulNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819D23118902E4A00BA40D7 /* OrientationRespectfulNavigationController.m */; };
+		0819D235189038D200BA40D7 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819D234189038D200BA40D7 /* NoteViewController.m */; };
+		0819D2381890611D00BA40D7 /* NoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819D2371890611D00BA40D7 /* NoteManager.m */; };
+		0819D23B1890618100BA40D7 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0819D23A1890618100BA40D7 /* Note.m */; };
+		082124FC1891AC7700DDC9CD /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 082124FB1891AC7700DDC9CD /* NSString+UUID.m */; };
+		08E51B6918888A3B00B0426A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B6818888A3B00B0426A /* Foundation.framework */; };
+		08E51B6B18888A3B00B0426A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B6A18888A3B00B0426A /* CoreGraphics.framework */; };
+		08E51B6D18888A3B00B0426A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B6C18888A3B00B0426A /* UIKit.framework */; };
+		08E51B7318888A3B00B0426A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E51B7118888A3B00B0426A /* InfoPlist.strings */; };
+		08E51B7518888A3B00B0426A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51B7418888A3B00B0426A /* main.m */; };
+		08E51B8818888A3C00B0426A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B8718888A3C00B0426A /* XCTest.framework */; };
+		08E51B8918888A3C00B0426A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B6818888A3B00B0426A /* Foundation.framework */; };
+		08E51B8A18888A3C00B0426A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51B6C18888A3B00B0426A /* UIKit.framework */; };
+		08E51B9218888A3C00B0426A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E51B9018888A3C00B0426A /* InfoPlist.strings */; };
+		08E51B9418888A3C00B0426A /* GrokinNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51B9318888A3C00B0426A /* GrokinNotesTests.m */; };
+		08E51BA71888902A00B0426A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BA41888902A00B0426A /* AppDelegate.m */; };
+		08E51BAB1888903200B0426A /* TestFlightConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E51BAA1888903200B0426A /* TestFlightConfiguration.plist */; };
+		08E51BAD1888955E00B0426A /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51BAC1888955E00B0426A /* libGTLTouchStaticLib.a */; };
+		08E51BAF1888957000B0426A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51BAE1888957000B0426A /* Security.framework */; };
+		08E51BB11888957800B0426A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E51BB01888957800B0426A /* MobileCoreServices.framework */; };
+		08E51BB4188897D800B0426A /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E51BB3188897D800B0426A /* GTMOAuth2ViewTouch.xib */; };
+		08E51BB71888981500B0426A /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BB51888981500B0426A /* GTLDrive_Sources.m */; };
+		08E51BBA1888995C00B0426A /* GoogleConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E51BB91888995C00B0426A /* GoogleConfiguration.plist */; };
+		08E51BBD188899A000B0426A /* GoogleDriveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BBC188899A000B0426A /* GoogleDriveManager.m */; };
+		08E51BC118889EF200B0426A /* TestFlightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BC018889EF200B0426A /* TestFlightManager.m */; };
+		08E51BCA1888EDF400B0426A /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BC71888EDF400B0426A /* ContainerViewController.m */; };
+		08E51BCB1888EDF400B0426A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BC91888EDF400B0426A /* MenuViewController.m */; };
+		08E51BCE1888F6A700B0426A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E51BCD1888F6A700B0426A /* MainViewController.m */; };
+		FDFC29B887754937BC7660F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4BCB60C0224394A864E727 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08E51B8B18888A3C00B0426A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08E51B5D18888A3B00B0426A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08E51B6418888A3B00B0426A;
+			remoteInfo = GrokinNotes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0806445B1891C3C0005572CC /* GRKFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRKFileManager.h; sourceTree = "<group>"; };
+		0806445C1891C3C0005572CC /* GRKFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRKFileManager.m; sourceTree = "<group>"; };
+		08087E4F18997566009D2C54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GrokinNotes/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		08087E5218997582009D2C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GrokinNotes/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		0819D22C18902A3800BA40D7 /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteCell.h; path = ViewControllers/NoteCell/NoteCell.h; sourceTree = "<group>"; };
+		0819D22D18902A3800BA40D7 /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteCell.m; path = ViewControllers/NoteCell/NoteCell.m; sourceTree = "<group>"; };
+		0819D23018902E4A00BA40D7 /* OrientationRespectfulNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationRespectfulNavigationController.h; sourceTree = "<group>"; };
+		0819D23118902E4A00BA40D7 /* OrientationRespectfulNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationRespectfulNavigationController.m; sourceTree = "<group>"; };
+		0819D233189038D200BA40D7 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		0819D234189038D200BA40D7 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		0819D2361890611D00BA40D7 /* NoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteManager.h; path = Managers/NoteManager.h; sourceTree = "<group>"; };
+		0819D2371890611D00BA40D7 /* NoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteManager.m; path = Managers/NoteManager.m; sourceTree = "<group>"; };
+		0819D2391890618100BA40D7 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Data/Note.h; sourceTree = "<group>"; };
+		0819D23A1890618100BA40D7 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Data/Note.m; sourceTree = "<group>"; };
+		082124FA1891AC7700DDC9CD /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
+		082124FB1891AC7700DDC9CD /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
+		08E51B6518888A3B00B0426A /* GrokinNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrokinNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E51B6818888A3B00B0426A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		08E51B6A18888A3B00B0426A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		08E51B6C18888A3B00B0426A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		08E51B7018888A3B00B0426A /* GrokinNotes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrokinNotes-Info.plist"; sourceTree = "<group>"; };
+		08E51B7218888A3B00B0426A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E51B7418888A3B00B0426A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08E51B7618888A3B00B0426A /* GrokinNotes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrokinNotes-Prefix.pch"; sourceTree = "<group>"; };
+		08E51B8618888A3C00B0426A /* GrokinNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrokinNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E51B8718888A3C00B0426A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		08E51B8F18888A3C00B0426A /* GrokinNotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrokinNotesTests-Info.plist"; sourceTree = "<group>"; };
+		08E51B9118888A3C00B0426A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E51B9318888A3C00B0426A /* GrokinNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrokinNotesTests.m; sourceTree = "<group>"; };
+		08E51BA31888902A00B0426A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		08E51BA41888902A00B0426A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		08E51BAA1888903200B0426A /* TestFlightConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestFlightConfiguration.plist; sourceTree = "<group>"; };
+		08E51BAC1888955E00B0426A /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "ThirdParty/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		08E51BAE1888957000B0426A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		08E51BB01888957800B0426A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		08E51BB3188897D800B0426A /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "ThirdParty/google-api-objectivec-client-read-only/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
+		08E51BB51888981500B0426A /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLDrive_Sources.m; path = "ThirdParty/google-api-objectivec-client-read-only/Source/Services/Drive/Generated/GTLDrive_Sources.m"; sourceTree = SOURCE_ROOT; };
+		08E51BB61888981500B0426A /* GTLDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLDrive.h; path = "ThirdParty/google-api-objectivec-client-read-only/Source/Services/Drive/Generated/GTLDrive.h"; sourceTree = SOURCE_ROOT; };
+		08E51BB91888995C00B0426A /* GoogleConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleConfiguration.plist; sourceTree = "<group>"; };
+		08E51BBB188899A000B0426A /* GoogleDriveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleDriveManager.h; path = Managers/GoogleDriveManager.h; sourceTree = "<group>"; };
+		08E51BBC188899A000B0426A /* GoogleDriveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleDriveManager.m; path = Managers/GoogleDriveManager.m; sourceTree = "<group>"; };
+		08E51BBF18889EF200B0426A /* TestFlightManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlightManager.h; path = Managers/TestFlightManager.h; sourceTree = "<group>"; };
+		08E51BC018889EF200B0426A /* TestFlightManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestFlightManager.m; path = Managers/TestFlightManager.m; sourceTree = "<group>"; };
+		08E51BC61888EDF400B0426A /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		08E51BC71888EDF400B0426A /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		08E51BC81888EDF400B0426A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		08E51BC91888EDF400B0426A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		08E51BCC1888F6A700B0426A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		08E51BCD1888F6A700B0426A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		8486DE6F230E4F359A9A0A19 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EB4BCB60C0224394A864E727 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08E51B6218888A3B00B0426A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E51BB11888957800B0426A /* MobileCoreServices.framework in Frameworks */,
+				08E51BAF1888957000B0426A /* Security.framework in Frameworks */,
+				08E51B6B18888A3B00B0426A /* CoreGraphics.framework in Frameworks */,
+				08E51B6D18888A3B00B0426A /* UIKit.framework in Frameworks */,
+				08E51B6918888A3B00B0426A /* Foundation.framework in Frameworks */,
+				FDFC29B887754937BC7660F4 /* libPods.a in Frameworks */,
+				08E51BAD1888955E00B0426A /* libGTLTouchStaticLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E51B8318888A3C00B0426A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E51B8818888A3C00B0426A /* XCTest.framework in Frameworks */,
+				08E51B8A18888A3C00B0426A /* UIKit.framework in Frameworks */,
+				08E51B8918888A3C00B0426A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0819D22B188F4C8300BA40D7 /* NoteCell */ = {
+			isa = PBXGroup;
+			children = (
+				0819D22C18902A3800BA40D7 /* NoteCell.h */,
+				0819D22D18902A3800BA40D7 /* NoteCell.m */,
+			);
+			name = NoteCell;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0819D22F18902E4A00BA40D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0806445B1891C3C0005572CC /* GRKFileManager.h */,
+				0806445C1891C3C0005572CC /* GRKFileManager.m */,
+				082124FA1891AC7700DDC9CD /* NSString+UUID.h */,
+				082124FB1891AC7700DDC9CD /* NSString+UUID.m */,
+				0819D23018902E4A00BA40D7 /* OrientationRespectfulNavigationController.h */,
+				0819D23118902E4A00BA40D7 /* OrientationRespectfulNavigationController.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0819D23C1890618600BA40D7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0819D2391890618100BA40D7 /* Note.h */,
+				0819D23A1890618100BA40D7 /* Note.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		08E51B5C18888A3B00B0426A = {
+			isa = PBXGroup;
+			children = (
+				08E51B6E18888A3B00B0426A /* GrokinNotes */,
+				08E51B8D18888A3C00B0426A /* GrokinNotesTests */,
+				08E51B6718888A3B00B0426A /* Frameworks */,
+				08E51B6618888A3B00B0426A /* Products */,
+				8486DE6F230E4F359A9A0A19 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		08E51B6618888A3B00B0426A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08E51B6518888A3B00B0426A /* GrokinNotes.app */,
+				08E51B8618888A3C00B0426A /* GrokinNotesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08E51B6718888A3B00B0426A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BB01888957800B0426A /* MobileCoreServices.framework */,
+				08E51BAE1888957000B0426A /* Security.framework */,
+				08E51BAC1888955E00B0426A /* libGTLTouchStaticLib.a */,
+				08E51B6818888A3B00B0426A /* Foundation.framework */,
+				08E51B6A18888A3B00B0426A /* CoreGraphics.framework */,
+				08E51B6C18888A3B00B0426A /* UIKit.framework */,
+				08E51B8718888A3C00B0426A /* XCTest.framework */,
+				EB4BCB60C0224394A864E727 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08E51B6E18888A3B00B0426A /* GrokinNotes */ = {
+			isa = PBXGroup;
+			children = (
+				08087E5118997582009D2C54 /* Main.storyboard */,
+				08087E4F18997566009D2C54 /* Images.xcassets */,
+				08E51BA21888902A00B0426A /* Classes */,
+				08E51BB81888981C00B0426A /* GTLDrive */,
+				08E51BA91888903200B0426A /* Resources */,
+				08E51B6F18888A3B00B0426A /* Supporting Files */,
+			);
+			path = GrokinNotes;
+			sourceTree = "<group>";
+		};
+		08E51B6F18888A3B00B0426A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E51B7018888A3B00B0426A /* GrokinNotes-Info.plist */,
+				08E51B7118888A3B00B0426A /* InfoPlist.strings */,
+				08E51B7418888A3B00B0426A /* main.m */,
+				08E51B7618888A3B00B0426A /* GrokinNotes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08E51B8D18888A3C00B0426A /* GrokinNotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				08E51B9318888A3C00B0426A /* GrokinNotesTests.m */,
+				08E51B8E18888A3C00B0426A /* Supporting Files */,
+			);
+			path = GrokinNotesTests;
+			sourceTree = "<group>";
+		};
+		08E51B8E18888A3C00B0426A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E51B8F18888A3C00B0426A /* GrokinNotesTests-Info.plist */,
+				08E51B9018888A3C00B0426A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08E51BA21888902A00B0426A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BA31888902A00B0426A /* AppDelegate.h */,
+				08E51BA41888902A00B0426A /* AppDelegate.m */,
+				0819D23C1890618600BA40D7 /* Data */,
+				08E51BBE188899A300B0426A /* Managers */,
+				0819D22F18902E4A00BA40D7 /* Utils */,
+				08E51BC51888EDF400B0426A /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		08E51BA91888903200B0426A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BAA1888903200B0426A /* TestFlightConfiguration.plist */,
+				08E51BB91888995C00B0426A /* GoogleConfiguration.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		08E51BB81888981C00B0426A /* GTLDrive */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BB61888981500B0426A /* GTLDrive.h */,
+				08E51BB51888981500B0426A /* GTLDrive_Sources.m */,
+				08E51BB3188897D800B0426A /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = GTLDrive;
+			sourceTree = "<group>";
+		};
+		08E51BBE188899A300B0426A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BBB188899A000B0426A /* GoogleDriveManager.h */,
+				08E51BBC188899A000B0426A /* GoogleDriveManager.m */,
+				0819D2361890611D00BA40D7 /* NoteManager.h */,
+				0819D2371890611D00BA40D7 /* NoteManager.m */,
+				08E51BBF18889EF200B0426A /* TestFlightManager.h */,
+				08E51BC018889EF200B0426A /* TestFlightManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		08E51BC51888EDF400B0426A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				08E51BC61888EDF400B0426A /* ContainerViewController.h */,
+				08E51BC71888EDF400B0426A /* ContainerViewController.m */,
+				08E51BCC1888F6A700B0426A /* MainViewController.h */,
+				08E51BCD1888F6A700B0426A /* MainViewController.m */,
+				08E51BC81888EDF400B0426A /* MenuViewController.h */,
+				08E51BC91888EDF400B0426A /* MenuViewController.m */,
+				0819D22B188F4C8300BA40D7 /* NoteCell */,
+				0819D233189038D200BA40D7 /* NoteViewController.h */,
+				0819D234189038D200BA40D7 /* NoteViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08E51B6418888A3B00B0426A /* GrokinNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E51B9718888A3C00B0426A /* Build configuration list for PBXNativeTarget "GrokinNotes" */;
+			buildPhases = (
+				5ED1E762BD794CE58B761477 /* Check Pods Manifest.lock */,
+				08E51B6118888A3B00B0426A /* Sources */,
+				08E51BB2188895B400B0426A /* ShellScript */,
+				08E51B6218888A3B00B0426A /* Frameworks */,
+				08E51B6318888A3B00B0426A /* Resources */,
+				2A888067B4F849E5AA41153D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrokinNotes;
+			productName = GrokinNotes;
+			productReference = 08E51B6518888A3B00B0426A /* GrokinNotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08E51B8518888A3C00B0426A /* GrokinNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E51B9A18888A3C00B0426A /* Build configuration list for PBXNativeTarget "GrokinNotesTests" */;
+			buildPhases = (
+				08E51B8218888A3C00B0426A /* Sources */,
+				08E51B8318888A3C00B0426A /* Frameworks */,
+				08E51B8418888A3C00B0426A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08E51B8C18888A3C00B0426A /* PBXTargetDependency */,
+			);
+			name = GrokinNotesTests;
+			productName = GrokinNotesTests;
+			productReference = 08E51B8618888A3C00B0426A /* GrokinNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08E51B5D18888A3B00B0426A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Levi Brown";
+				TargetAttributes = {
+					08E51B6418888A3B00B0426A = {
+						DevelopmentTeam = P9SXYDYKXT;
+					};
+					08E51B8518888A3C00B0426A = {
+						TestTargetID = 08E51B6418888A3B00B0426A;
+					};
+				};
+			};
+			buildConfigurationList = 08E51B6018888A3B00B0426A /* Build configuration list for PBXProject "GrokinNotes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08E51B5C18888A3B00B0426A;
+			productRefGroup = 08E51B6618888A3B00B0426A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08E51B6418888A3B00B0426A /* GrokinNotes */,
+				08E51B8518888A3C00B0426A /* GrokinNotesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08E51B6318888A3B00B0426A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E51BB4188897D800B0426A /* GTMOAuth2ViewTouch.xib in Resources */,
+				08087E5018997566009D2C54 /* Images.xcassets in Resources */,
+				08E51BBA1888995C00B0426A /* GoogleConfiguration.plist in Resources */,
+				08087E5318997582009D2C54 /* Main.storyboard in Resources */,
+				08E51BAB1888903200B0426A /* TestFlightConfiguration.plist in Resources */,
+				08E51B7318888A3B00B0426A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E51B8418888A3C00B0426A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E51B9218888A3C00B0426A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08E51BB2188895B400B0426A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TYPES=\"m|mm|c|cc|cpp|cxx|h|hpp\"\nMATCH=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/${PRODUCT_NAME}\" -type f | egrep \"^.*\\.($TYPES)$\" | sed -e 's/ /\\\\ /g' | xargs egrep --with-filename --line-number --only-matching \"($MATCH).*\\$\" | perl -p -e \"s/($MATCH)/ warning: \\$1/\"";
+		};
+		2A888067B4F849E5AA41153D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ED1E762BD794CE58B761477 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08E51B6118888A3B00B0426A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0819D23B1890618100BA40D7 /* Note.m in Sources */,
+				08E51BBD188899A000B0426A /* GoogleDriveManager.m in Sources */,
+				0819D2381890611D00BA40D7 /* NoteManager.m in Sources */,
+				08E51BCA1888EDF400B0426A /* ContainerViewController.m in Sources */,
+				082124FC1891AC7700DDC9CD /* NSString+UUID.m in Sources */,
+				08E51BC118889EF200B0426A /* TestFlightManager.m in Sources */,
+				08E51BCE1888F6A700B0426A /* MainViewController.m in Sources */,
+				0819D22E18902A3800BA40D7 /* NoteCell.m in Sources */,
+				08E51BB71888981500B0426A /* GTLDrive_Sources.m in Sources */,
+				08E51BCB1888EDF400B0426A /* MenuViewController.m in Sources */,
+				0819D23218902E4A00BA40D7 /* OrientationRespectfulNavigationController.m in Sources */,
+				08E51BA71888902A00B0426A /* AppDelegate.m in Sources */,
+				08E51B7518888A3B00B0426A /* main.m in Sources */,
+				0819D235189038D200BA40D7 /* NoteViewController.m in Sources */,
+				0806445D1891C3C0005572CC /* GRKFileManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E51B8218888A3C00B0426A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E51B9418888A3C00B0426A /* GrokinNotesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08E51B8C18888A3C00B0426A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08E51B6418888A3B00B0426A /* GrokinNotes */;
+			targetProxy = 08E51B8B18888A3C00B0426A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08087E5118997582009D2C54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08087E5218997582009D2C54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		08E51B7118888A3B00B0426A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E51B7218888A3B00B0426A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		08E51B9018888A3C00B0426A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E51B9118888A3C00B0426A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08E51B9518888A3C00B0426A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"TESTFLIGHT=1",
+					"$(inherited)",
+					"FILEMD5HASH_EXTERN=extern",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "ThirdParty/google-api-objectivec-client-read-only/Source/**";
+			};
+			name = Debug;
+		};
+		08E51B9618888A3C00B0426A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "FILEMD5HASH_EXTERN=extern";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "ThirdParty/google-api-objectivec-client-read-only/Source/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08E51B9818888A3C00B0426A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8486DE6F230E4F359A9A0A19 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				INFOPLIST_FILE = "GrokinNotes/GrokinNotes-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/labrown/Development/GitHub/GrokinNotes/GrokinNotes/ThirdParty/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = GrokinNotes;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		08E51B9918888A3C00B0426A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8486DE6F230E4F359A9A0A19 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				INFOPLIST_FILE = "GrokinNotes/GrokinNotes-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/labrown/Development/GitHub/GrokinNotes/GrokinNotes/ThirdParty/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = GrokinNotes;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		08E51B9B18888A3C00B0426A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrokinNotes.app/GrokinNotes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GrokinNotesTests/GrokinNotesTests-Info.plist";
+				PRODUCT_NAME = GrokinNotesTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		08E51B9C18888A3C00B0426A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrokinNotes.app/GrokinNotes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				INFOPLIST_FILE = "GrokinNotesTests/GrokinNotesTests-Info.plist";
+				PRODUCT_NAME = GrokinNotesTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		08E51B9D18888E4000B0426A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"TESTFLIGHT=1",
+					"$(inherited)",
+					"FILEMD5HASH_EXTERN=extern",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "ThirdParty/google-api-objectivec-client-read-only/Source/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		08E51B9E18888E4000B0426A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8486DE6F230E4F359A9A0A19 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				INFOPLIST_FILE = "GrokinNotes/GrokinNotes-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/labrown/Development/GitHub/GrokinNotes/GrokinNotes/ThirdParty/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = GrokinNotes;
+				WRAPPER_EXTENSION = app;
+			};
+			name = AdHoc;
+		};
+		08E51B9F18888E4000B0426A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrokinNotes.app/GrokinNotes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrokinNotes/GrokinNotes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GrokinNotesTests/GrokinNotesTests-Info.plist";
+				PRODUCT_NAME = GrokinNotesTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = AdHoc;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08E51B6018888A3B00B0426A /* Build configuration list for PBXProject "GrokinNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E51B9518888A3C00B0426A /* Debug */,
+				08E51B9D18888E4000B0426A /* AdHoc */,
+				08E51B9618888A3C00B0426A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08E51B9718888A3C00B0426A /* Build configuration list for PBXNativeTarget "GrokinNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E51B9818888A3C00B0426A /* Debug */,
+				08E51B9E18888E4000B0426A /* AdHoc */,
+				08E51B9918888A3C00B0426A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08E51B9A18888A3C00B0426A /* Build configuration list for PBXNativeTarget "GrokinNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E51B9B18888A3C00B0426A /* Debug */,
+				08E51B9F18888E4000B0426A /* AdHoc */,
+				08E51B9C18888A3C00B0426A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08E51B5D18888A3B00B0426A /* Project object */;
+}
