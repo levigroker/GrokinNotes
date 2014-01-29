@@ -17,6 +17,8 @@ contain the needed credentials the app will present an unrecoverable error.
 A sample `GoogleConfiguration.plist` is provided (with fake values):
 
 	GrokinNotes/GrokinNotes/GoogleConfiguration.plist
+
+Steps to create the needed Google credentials are [available](SampleConfigs/GoogleREADME.md).
 	
 Similarly, configuration for TestFlight is stored in a plist which is also not included in
 this repository (but is optional):
