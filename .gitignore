@@ -2,5 +2,5 @@
 xcuserdata
 project.xcworkspace
 Build
-Resources/GoogleConfiguration.plist
-Resources/TestFlightConfiguration.plist
+/GrokinNotes/GrokinNotes/Resources/TestFlightConfiguration.plist
+/GrokinNotes/GrokinNotes/Resources/GoogleConfiguration.plist
