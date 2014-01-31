@@ -39,7 +39,7 @@ static NSTimeInterval const kContentAnimationDuration = 0.25f;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
     NoteManager *noteManager = [NoteManager shared];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteUpdated:) name:kNoteNotificationNoteUpdated object:noteManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteChanges:) name:kNoteNotificationNoteChanges object:noteManager];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,38 +72,43 @@ static NSTimeInterval const kContentAnimationDuration = 0.25f;
 
 #pragma mark - Notifications
 
-- (void)notificationNoteUpdated:(NSNotification *)notification
+- (void)notificationNoteChanges:(NSNotification *)notification
 {
-    DDLogVerbose(@"notificationNoteUpdated: %@", notification);
+    DDLogVerbose(@"notificationNoteChanges: %@", notification);
     
     NSDictionary *userInfo = notification.userInfo;
-    Note *notificationNote = [userInfo objectForKey:kNoteNotificationInfoKeyNote];
-    
-    //If the notification is for the note we are currently displaying
-    if ([notificationNote.remoteID isEqualToString:self.note.remoteID])
+    NSArray *updatedNotes = [userInfo objectForKey:kNoteNotificationInfoKeyUpdatedNotes];
+
+    for (Note *updatedNote in updatedNotes)
     {
-        //and the note is not dirty
-        if (![self.note readDirty])
+        //If the notification is for the note we are currently displaying
+        if ([updatedNote.remoteID isEqualToString:self.note.remoteID])
         {
-            //Update our display with the updated note
-            [self.note readContent:^(NSString *content, NSError *error) {
-                [UIView transitionWithView:self.view duration:kContentAnimationDuration options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-                    //Don't update the title if it is being edited
-                    if (!self.titleTextField.isFirstResponder)
+            //and the note is not dirty
+            if (![self.note readDirty])
+            {
+                //Update our display with the updated note
+                [self.note readContent:^(NSString *content, NSError *error) {
+                    [UIView transitionWithView:self.view duration:kContentAnimationDuration options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                        //Don't update the title if it is being edited
+                        if (!self.titleTextField.isFirstResponder)
+                        {
+                            self.titleTextField.text = self.note.title;
+                        }
+                        //Don't update the content if it is being edited
+                        if (!self.textView.isFirstResponder)
+                        {
+                            self.textView.text = content;
+                        }
+                    } completion:nil];
+                    if (error)
                     {
-                        self.titleTextField.text = self.note.title;
+                        DDLogError(@"Unable to read content of note '%@'. Error: %@", self.note, error);
                     }
-                    //Don't update the content if it is being edited
-                    if (!self.textView.isFirstResponder)
-                    {
-                        self.textView.text = content;
-                    }
-                } completion:nil];
-                if (error)
-                {
-                    DDLogError(@"Unable to read content of note '%@'. Error: %@", self.note, error);
-                }
-            }];
+                }];
+            }
+            
+            break;
         }
     }
 }
@@ -149,36 +154,39 @@ static NSTimeInterval const kContentAnimationDuration = 0.25f;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSString *newTitle = textField.text;
-    NSError *error = [self.note updateTitle:newTitle];
-    if (error)
-    {
-        NSString *message = NSLocalizedString(@"Please choose a different title for your note.", nil);
-        if (newTitle.length == 0)
-        {
-            message = NSLocalizedString(@"Your note must have a title.", nil);
-        }
-        else
-        {
-            NSError *underlyingError = [error.userInfo objectForKey:NSUnderlyingErrorKey];
-            if (underlyingError)
-            {
-                message = [underlyingError localizedDescription];
-            }
-        }
-
-        UIAlertView *alert = [UIAlertView alertWithTitle:NSLocalizedString(@"Title Error", nil) message:message];
-        [alert addButtonWithTitle:NSLocalizedString(@"Drat!", nil) handler:^{
-            [textField becomeFirstResponder];
-        }];
-        [alert show];
-    }
-    else
-    {
-        [textField resignFirstResponder];
-    }
+    [textField resignFirstResponder];
 
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //We could be dismissed at this point, so don't bother displaying another alert.
+    if (self.view.superview)
+    {
+        NSString *newTitle = textField.text;
+        NSError *error = [self.note updateTitle:newTitle];
+        if (error)
+        {
+            NSString *message = NSLocalizedString(@"Please choose a different title for your note.", nil);
+            if (newTitle.length == 0)
+            {
+                message = NSLocalizedString(@"Your note must have a title.", nil);
+            }
+            else
+            {
+                NSError *underlyingError = [error.userInfo objectForKey:NSUnderlyingErrorKey];
+                if (underlyingError)
+                {
+                    message = [underlyingError localizedDescription];
+                }
+            }
+            
+            UIAlertView *alert = [UIAlertView alertWithTitle:NSLocalizedString(@"Title Error", nil) message:message];
+            [alert addButtonWithTitle:NSLocalizedString(@"Drat!", nil) handler:nil];
+            [alert show];
+        }
+    }
 }
 
 #pragma mark - UITextViewDelegate
