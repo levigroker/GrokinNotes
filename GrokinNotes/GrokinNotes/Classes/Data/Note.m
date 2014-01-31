@@ -152,7 +152,12 @@ static NSString * const kExtendedAttributeKeyDirty = @"com.levigroker.local.dirt
     }
     else
     {
-        DDLogWarn(@"Unable to read 'remoteID' as extented attribute. Error: %@", error);
+        //If we get anything besides ENOATTR (the attribute doesn't exist) then log a warning
+        NSNumber *errnoValue = [error.userInfo objectForKey:kGRKFileManagerErrorKeyErrno];
+        if (!errnoValue || [errnoValue intValue] != ENOATTR)
+        {
+            DDLogWarn(@"Unable to read 'remoteID' as extented attribute. Error: %@", error);
+        }
     }
     
     return retVal;
@@ -184,7 +189,12 @@ static NSString * const kExtendedAttributeKeyDirty = @"com.levigroker.local.dirt
     }
     else
     {
-        DDLogWarn(@"Unable to read 'localID' as extented attribute. Error: %@", error);
+        //If we get anything besides ENOATTR (the attribute doesn't exist) then log a warning
+        NSNumber *errnoValue = [error.userInfo objectForKey:kGRKFileManagerErrorKeyErrno];
+        if (!errnoValue || [errnoValue intValue] != ENOATTR)
+        {
+            DDLogWarn(@"Unable to read 'localID' as extented attribute. Error: %@", error);
+        }
     }
     
     return retVal;
@@ -216,7 +226,12 @@ static NSString * const kExtendedAttributeKeyDirty = @"com.levigroker.local.dirt
     }
     else
     {
-        DDLogWarn(@"Unable to read 'deleted' as extented attribute. Error: %@", error);
+        //If we get anything besides ENOATTR (the attribute doesn't exist) then log a warning
+        NSNumber *errnoValue = [error.userInfo objectForKey:kGRKFileManagerErrorKeyErrno];
+        if (!errnoValue || [errnoValue intValue] != ENOATTR)
+        {
+            DDLogWarn(@"Unable to read 'deleted' as extented attribute. Error: %@", error);
+        }
     }
     
     return retVal;
@@ -248,7 +263,12 @@ static NSString * const kExtendedAttributeKeyDirty = @"com.levigroker.local.dirt
     }
     else
     {
-        DDLogWarn(@"Unable to read 'dirty' as extented attribute. Error: %@", error);
+        //If we get anything besides ENOATTR (the attribute doesn't exist) then log a warning
+        NSNumber *errnoValue = [error.userInfo objectForKey:kGRKFileManagerErrorKeyErrno];
+        if (!errnoValue || [errnoValue intValue] != ENOATTR)
+        {
+            DDLogWarn(@"Unable to read 'dirty' as extented attribute. Error: %@", error);
+        }
     }
     
     return retVal;
