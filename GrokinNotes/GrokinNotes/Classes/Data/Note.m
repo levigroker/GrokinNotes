@@ -309,7 +309,7 @@ static NSString * const kExtendedAttributeKeyDirty = @"com.levigroker.local.dirt
 - (NSString *)description
 {
     
-    return [NSString stringWithFormat:@"[%@ <%p> title: '%@', dirty: %@, deleted: %@, localID '%@', remoteID '%@']", [self class],
+    return [NSString stringWithFormat:@"[%@ <%p> title: \"%@\", dirty: %@, deleted: %@, localID \"%@\", remoteID \"%@\"]", [self class],
             self, self.title, self.dirty ? @"YES" : @"NO", self.deleted ? @"YES" : @"NO", self.localID, self.remoteID];
 }
 
