@@ -49,9 +49,7 @@ static NSString * const kSegueNoteDetail = @"note_detail";
     self.notes = [NSMutableArray array];
     
     NoteManager *noteManager = [NoteManager shared];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteCreated:) name:kNoteNotificationNoteCreated object:noteManager];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteUpdated:) name:kNoteNotificationNoteUpdated object:noteManager];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteDeleted:) name:kNoteNotificationNoteDeleted object:noteManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoteChanges:) name:kNoteNotificationNoteChanges object:noteManager];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -167,68 +165,22 @@ static NSString * const kSegueNoteDetail = @"note_detail";
 
 #pragma mark - Notifications
 
-- (void)notificationNoteCreated:(NSNotification *)notification
+- (void)notificationNoteChanges:(NSNotification *)notification
 {
     DDLogVerbose(@"notificationNoteCreated: %@", notification);
     
-    NSDictionary *userInfo = notification.userInfo;
-    Note *note = [userInfo objectForKey:kNoteNotificationInfoKeyNote];
-    if (note)
-    {
-        NoteManager *noteManager = [NoteManager shared];
-        [self.notes removeAllObjects];
-        NSArray *visibleNotes = [noteManager visibleNotes];
-        [self.notes addObjectsFromArray:visibleNotes];
+    //TODO: Handle dynamic updates rather than brute force
+    //NSDictionary *userInfo = notification.userInfo;
+    //NSArray *deletedNotes = [userInfo objectForKey:kNoteNotificationInfoKeyDeletedNotes];
+    //NSArray *updatedNotes = [userInfo objectForKey:kNoteNotificationInfoKeyUpdatedNotes];
+    //NSArray *newNotes = [userInfo objectForKey:kNoteNotificationInfoKeyAddedNotes];
 
-        NSUInteger index = [self.notes indexOfObject:note];
-        if (index != NSNotFound)
-        {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-            [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [self.tableView endUpdates];
-        }
-    }
-}
-
-- (void)notificationNoteUpdated:(NSNotification *)notification
-{
-    DDLogVerbose(@"notificationNoteUpdated: %@", notification);
+    NoteManager *noteManager = [NoteManager shared];
+    [self.notes removeAllObjects];
+    NSArray *visibleNotes = [noteManager visibleNotes];
+    [self.notes addObjectsFromArray:visibleNotes];
     
-    NSDictionary *userInfo = notification.userInfo;
-    Note *note = [userInfo objectForKey:kNoteNotificationInfoKeyNote];
-    if (note)
-    {
-        NSUInteger index = [self.notes indexOfObject:note];
-        if (index != NSNotFound)
-        {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [self.tableView endUpdates];
-        }
-    }
-}
-
-- (void)notificationNoteDeleted:(NSNotification *)notification
-{
-    DDLogVerbose(@"notificationNoteDeleted: %@", notification);
-
-    NSDictionary *userInfo = notification.userInfo;
-    Note *note = [userInfo objectForKey:kNoteNotificationInfoKeyNote];
-    if (note)
-    {
-        NSUInteger index = [self.notes indexOfObject:note];
-        if (index != NSNotFound)
-        {
-            [self.notes removeObject:note];
-            
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-            [self.tableView beginUpdates];
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [self.tableView endUpdates];
-        }
-    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View
@@ -239,7 +191,7 @@ static NSString * const kSegueNoteDetail = @"note_detail";
     DDLogVerbose(@"refreshTableView");
     
     NoteManager *noteManager = [NoteManager shared];
-    [noteManager synchronize:^(NSError *error) {
+    [noteManager synchronize:^(NSArray *errors) {
         [self.refreshControl endRefreshing];
     }];
 }
@@ -276,12 +228,11 @@ static NSString * const kSegueNoteDetail = @"note_detail";
             [noteManager markNoteAsDeleted:note];
             //Remove the note from our local array
             [self.notes removeObject:note];
-            //Update the table view
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            //The table view will be updated by a notification the note was deleted.
             break;
         }
         default:
-            DDLogError(@"Unhandled editing style '%ld'.", editingStyle);
+            DDLogError(@"Unhandled editing style '%@'.", @(editingStyle));
             break;
     }
 }
