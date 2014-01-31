@@ -49,23 +49,21 @@ ideas present themselves:
 returned by the request).
 * Prevent synchronization attempts if we are not authenticated or do not have network
 connectivity.
+* Handle duplicate note titles. This is potentially tricky, if we will continue to try to
+keep note titles tied to the note filename on iOS since the filesystem will prevent files
+with the same name, while Google Drive has no such limitation. Perhaps the files can be
+stored in a non-user visible location (not in "Documents") with unique filenames and
+sym-linked to Documents with title names. This might work, but we still have to adjust the
+duplicated filenames somehow.
 
 #### Known Issues
 
-* The synchronization code is a work in progress and is by no means working fully as
-intended.
-* A race condition exists such that when a new note is created and it's title changed
-locally the title may revert to "Untitled" as a server update occurs.
-* A crashing issue exists when updating the table view as a server update is in progress.
-This is likely due to a race condition caused by concurrent execution of note updates from
-the remote. A possible solution is to group the changes into a batch and send the batch
-along in the notification rather than sending individual notifications. This is most
-likely desired anyway since it will cause less visual "thrash" to the user as updates
-occur.
-* Currently, attempting to delete a note will block the refresh indefinitely, and will
-persist since the file is marked as deleted locally.
 * A drop shadow should be present on the main view once the menu view is displayed (but
 does not appear).
+* Duplicate note titles cause name space collisions on the iOS filesystem and will have to
+be cleared by renaming similarly named notes using the Google Drive interface directly.
+* The main table view is refreshed by brute force. It will need to be made smarter by
+performing animated inserts/deletes/updates.
 
 ### Disclaimer and Licence
 
