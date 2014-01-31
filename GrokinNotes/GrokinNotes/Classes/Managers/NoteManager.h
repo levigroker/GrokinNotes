@@ -26,26 +26,26 @@ typedef NS_ENUM(NSInteger, NoteManagerError) {
 ////
 
 /**
- The name of the notification which is sent when a note is created
+ The name of the notification which is sent when a changes to are made which affect the visible notes.
  */
-NSString * const kNoteNotificationNoteCreated;
-/**
- The name of the notification which is sent when a note is updated
- */
-NSString * const kNoteNotificationNoteUpdated;
-/**
- The name of the notification which is sent when a note is deleted
- */
-NSString * const kNoteNotificationNoteDeleted;
+NSString * const kNoteNotificationNoteChanges;
 
 ////
 //// Notification UserInfo Keys
 ////
 
 /**
- The userInfo key for notifications which represents the Note object
+ The userInfo key, for a notification, which represents the array of notes which were deleted.
  */
-NSString * const kNoteNotificationInfoKeyNote;
+NSString * const kNoteNotificationInfoKeyDeletedNotes;
+/**
+ The userInfo key, for a notification, which represents the array of notes which were updated.
+ */
+NSString * const kNoteNotificationInfoKeyUpdatedNotes;
+/**
+ The userInfo key, for a notification, which represents the array of notes which were added.
+ */
+NSString * const kNoteNotificationInfoKeyAddedNotes;
 
 @interface NoteManager : NSObject
 
@@ -91,17 +91,17 @@ NSString * const kNoteNotificationInfoKeyNote;
  Appropriate notifications are posted when changes to the local collections are made.
  This will also toggle the visibility of the UIApplication network activity indicator as needed.
  
- @param completion Called when the operation completes, possibly with error.
+ @param completion Called when the operation completes, with an array of NSError objects which may have occurred (the array will be `nil` if no errors occurred).
  */
-- (void)synchronize:(void(^)(NSError *error))completion;
+- (void)synchronize:(void(^)(NSArray *errors))completion;
 
 /**
  Refreshes the local notes with information from the server.
  
- @param completion Called once the refresh proceedure completes, possibly with error.
+ @param completion Called once the refresh proceedure completes, with an array of NSError objects which may have occurred (the array will be `nil` if no errors occurred).
  @see synchronize: As the preferred option for keeping up to date with the remote since it also communicates local changes to the server.
  */
-- (void)refreshFromRemote:(void(^)(NSError *error))completion;
+- (void)refreshFromRemote:(void(^)(NSArray *errors))completion;
 
 /**
  Creates a new Note object with a unique title, and adds it to our internal store, sending out appropriate notifications.
