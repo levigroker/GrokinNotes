@@ -626,8 +626,14 @@ static NSUInteger const kMaxUniqueFilenameAttempts = 1000;
         NSMutableDictionary *notesByLocalID = [NSMutableDictionary dictionary];
         for (Note *note in notes)
         {
-            //Update local ID note map
             NSString *localID = note.localID;
+            //If we don't have a local ID, then create one, since we must track this note.
+            if (!localID)
+            {
+                [note writeLocalID:[NSString UUID]];
+                localID = note.localID;
+            }
+            //Update local ID note map
             if (localID)
             {
                 [notesByLocalID setObject:note forKey:localID];
