@@ -3,6 +3,11 @@ GrokinNotes
 A simple note taking app experiment which uses Google Drive as the cloud based data
 storage and synchronization mechanism.
 
+### Requirements
+
+* The app's deployment target is for iOS 7.0
+* A Google Drive account is needed for note synchronization.
+
 ### Notes
 
 Configuration for Google Drive is stored in a plist which is not included in this
